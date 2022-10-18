@@ -1,0 +1,220 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Twenty Seconds Resume/CV
+% LaTeX Template
+% Version 1.1 (8/1/17)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Carmine Spagnuolo (cspagnuolo@unisa.it) with major modifications by 
+% Vel (vel@LaTeXTemplates.com)
+%
+% License:
+% The MIT License (see included LICENSE file)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[letterpaper]{twentysecondcv} % a4paper for A4
+
+%----------------------------------------------------------------------------------------
+%	 PERSONAL INFORMATION
+%----------------------------------------------------------------------------------------
+
+% If you don't need one or more of the below, just remove the content leaving the command, e.g. \cvnumberphone{}
+
+\profilepic{NateFortner.jpeg} % Profile picture
+
+\cvname{Nate Fortner} % Your name
+\cvjobtitle{Student/Server Administrator} % Job title/career
+
+\cvdate{} % Date of birth
+\cvaddress{Bellingham, WA} % Short address/location, use \newline if more than 1 line is required
+\cvnumberphone{251-229-2948} % Phone number
+\cvsite{https://nefortner.com} % Personal website
+\cvmail{resume@nefortner.com} % Email address
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	 ABOUT ME
+%----------------------------------------------------------------------------------------
+
+\aboutme{} % To have no About Me section, just remove all the text and leave \aboutme{}
+
+%----------------------------------------------------------------------------------------
+%	 SKILLS
+%----------------------------------------------------------------------------------------
+
+% Skill bar section, each skill must have a value between 0 an 6 (float)
+\skills{}
+
+%------------------------------------------------
+
+% Skill text section, each skill must have a value between 0 an 6
+\skillstext{}
+
+\skillsmanual{
+	\subsection{Computer Skills}
+	\begin{itemize}
+		\item Strong skill with Microsoft Office (Word, Excel, PowerPoint, Access)
+		\item Completed Computer Technology, Robotics, Multimedia Design, Web Design, Computer
+		Maintenance, Cisco Networking Training, and Engineering courses
+		\item Valencia High School's CyberPatriot team member for 2 years
+		\item Coastline Community College's WRCCDC Cyber Security Team member
+		\item Western Washington University's PRCCDC Cyber Security Team member
+		\item Western Washington University's Cyber Security Club member
+		\item Western Washington University's CyberForce Team member
+	\end{itemize}
+	\subsection{Interpersonal Skills}
+	\begin{itemize}
+		\item Excellent communication skills
+		\item Skilled in keyboarding and presenting using technology
+		\item Effective at working independently
+		\item Enthusiastic and motivated worker
+		\item Mentor for First Robotics and CyberPatriots
+	\end{itemize}
+}
+%----------------------------------------------------------------------------------------
+
+\makeprofile % Print the sidebar
+
+%----------------------------------------------------------------------------------------
+%	 PURPOSE
+%----------------------------------------------------------------------------------------
+
+\section{Purpose}
+
+To find a summer internship for the summer of 2023 in the cybersecurity field.
+
+%----------------------------------------------------------------------------------------
+%	 EDUCATION
+%----------------------------------------------------------------------------------------
+
+\section{Education}
+
+\begin{twenty} % Environment for a list with descriptions
+	\twentyitem
+		{since 2020}
+		{Bachelor of Science}
+		{Western Washington University}
+		{\begin{itemize}
+			\item Majoring in Computer Science
+			\item Member of the Cybersecurity Club
+		\end{itemize}}
+	\twentyitem
+		{2012-2017}
+		{High School Diploma}
+		{Valencia High School}
+		{\begin{itemize}
+			\item Member of the CyberPatriot template
+			\item Participated in FRC robotics
+		\end{itemize}}
+	%\twentyitem{<dates>}{<title>}{<location>}{<description>}
+\end{twenty}
+
+%----------------------------------------------------------------------------------------
+%	 CERTIFICATES
+%----------------------------------------------------------------------------------------
+
+\section{Certificates}
+
+\begin{twentyshort} % Environment for a short list with no descriptions
+	\twentyitemshort{2017-2025}{CompTIA A+}
+	\twentyitemshort{2018-2025}{CompTIA Network+}
+	\twentyitemshort{2019-2025}{CompTIA Security+}
+	%\twentyitemshort{<dates>}{<title/description>}
+\end{twentyshort}
+
+%----------------------------------------------------------------------------------------
+%	 EXPERIENCE
+%----------------------------------------------------------------------------------------
+
+\section{Experience}
+
+\begin{twenty} % Environment for a list with descriptions
+	\twentyitem
+		{since 2022}
+		{Server Administrator Student Employee}
+		{Western Washington University}
+		{\begin{itemize}
+			\item Manage and maintain the housing departments Linux servers
+			\item Oversaw a major migration of the housing department's servers from vCenter to Azure
+		\end{itemize}}
+	\twentyitem
+		{2019-2020}
+		{Tier 2 Help Desk Support}
+		{SeaGen}
+		{\begin{itemize}
+			\item Assisted with setting up new computers and remote troubleshooting of computers
+			\item Maintained printers, docking stations, and other office technological equipment
+		\end{itemize}}
+	\twentyitem
+		{2018-2019}
+		{Help Desk Support}
+		{Pathway Capital Management}
+		{\begin{itemize}
+			\item Provided technical support, upgrade services, and repairs for company computers, servers, and
+			networks.
+			\item Completed a system relocation as part of a major office move.
+		\end{itemize}}
+	\twentyitem
+		{2005-2020}
+		{Boy Scout}
+		{Boy Scouts of America}
+		{\begin{itemize}
+			\item Started Scouting in 1 st grade and earned Eagle Scout in July 2016.
+			\item Served as Troop Webmaster from 2010-2020 - created new websites for four BSA troops / crews and
+			responsible for maintaining the new websites.
+			\item Voted into Order of the Arrow – Scouting’s National Honor Society.
+		\end{itemize}}
+	\twentyitem
+		{Summer 2016}
+		{Design Interaction Intern}
+		{NASA's Jet Propulsion Laboratory}
+		{\begin{itemize}
+			\item Worked with the Deep Space Network team to modernize the satellite controls.
+			\item Developed and prepared written technical reports and abstracts and prepared presentations.
+		\end{itemize}}
+	%\twentyitem{<dates>}{<title>}{<location>}{<description>}
+\end{twenty}
+
+%----------------------------------------------------------------------------------------
+%	 OTHER INFORMATION
+%----------------------------------------------------------------------------------------
+
+\section{Other information}
+
+\subsection{Home Lab}
+
+I have build and maintained a home lab using surplus enterprise hardware. I have everything running inside of docker containers.  I use PFSense as a firewall and router, Proxmox as a hypervisor, and a variety of other services.
+
+%----------------------------------------------------------------------------------------
+%	 SECOND PAGE EXAMPLE
+%----------------------------------------------------------------------------------------
+
+%\newpage % Start a new page
+
+%\makeprofile % Print the sidebar
+
+%\section{Other information}
+
+%\subsection{Review}
+
+%Alice approaches Wonderland as an anthropologist, but maintains a strong sense of noblesse oblige that comes with her class status. She has confidence in her social position, education, and the Victorian virtue of good manners. Alice has a feeling of entitlement, particularly when comparing herself to Mabel, whom she declares has a ``poky little house," and no toys. Additionally, she flaunts her limited information base with anyone who will listen and becomes increasingly obsessed with the importance of good manners as she deals with the rude creatures of Wonderland. Alice maintains a superior attitude and behaves with solicitous indulgence toward those she believes are less privileged.
+
+%\section{Other information}
+
+%\subsection{Review}
+
+%Alice approaches Wonderland as an anthropologist, but maintains a strong sense of noblesse oblige that comes with her class status. She has confidence in her social position, education, and the Victorian virtue of good manners. Alice has a feeling of entitlement, particularly when comparing herself to Mabel, whom she declares has a ``poky little house," and no toys. Additionally, she flaunts her limited information base with anyone who will listen and becomes increasingly obsessed with the importance of good manners as she deals with the rude creatures of Wonderland. Alice maintains a superior attitude and behaves with solicitous indulgence toward those she believes are less privileged.
+
+%----------------------------------------------------------------------------------------
+
+\end{document} 
