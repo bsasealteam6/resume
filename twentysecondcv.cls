@@ -18,6 +18,7 @@
 \RequirePackage{pgffor}
 \RequirePackage{marvosym}
 \RequirePackage{parskip}
+\RequirePackage{fontawesome}
 
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
@@ -76,6 +77,8 @@
 \newcommand{\cvname}[1]{\renewcommand{\cvname}{#1}}
 \newcommand{\cvjobtitle}[1]{\renewcommand{\cvjobtitle}{#1}}
 \newcommand{\skillsmanual}[1]{\renewcommand{\skillsmanual}{#1}}
+\newcommand{\linkedin}[1]{\renewcommand{\linkedin}{#1}}
+\newcommand{\github}[1]{\renewcommand{\github}{#1}}
 
 % Command for printing the contact information icons
 \newcommand*\icon[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=1pt, fill=mainblue,mainblue,text=white] (char) {#1};}}
@@ -138,13 +141,15 @@
 
 		%------------------------------------------------
 
-		\renewcommand{\arraystretch}{1.6}
+		\renewcommand{\arraystretch}{1.7}
 		\begin{tabular}{p{0.5cm} @{\hskip 0.5cm}p{5cm}}
 			\ifthenelse{\equal{\cvdate}{}}{}{\textsc{\Large\icon{\Info}} & \cvdate\\}
 			\ifthenelse{\equal{\cvaddress}{}}{}{\textsc{\Large\icon{\Letter}} & \cvaddress\\}
-			\ifthenelse{\equal{\cvnumberphone}{}}{}{\textsc{\Large\icon{\Telefon}} & \cvnumberphone\\}
-			\ifthenelse{\equal{\cvsite}{}}{}{\textsc{\Large\icon{\Mundus}} & \cvsite\\}
-			\ifthenelse{\equal{\cvmail}{}}{}{\textsc{\large\icon{@}} & \href{mailto:\cvmail}{\cvmail}}
+			\ifthenelse{\equal{\cvnumberphone}{}}{}{\textsc{\Large\icon{\Telefon}} & \href{tel:\cvnumberphone}{\cvnumberphone}\\}
+			\ifthenelse{\equal{\cvsite}{}}{}{\textsc{\Large\icon{\Mundus}} & \href{\cvsite}{\cvsite}\\}
+			\ifthenelse{\equal{\cvmail}{}}{}{\textsc{\large\icon{\faAt}} & \href{mailto:\cvmail}{\cvmail}\\}
+			\ifthenelse{\equal{\linkedin}{}}{}{\textsc{\large\icon{\faLinkedin}} & \href{https://www.linkedin.com/in/\linkedin}{\linkedin}\\}
+			\ifthenelse{\equal{\github}{}}{}{\textsc{\large\icon{\faGithub}} & \href{https://www.github.com/\github}{\github}\\}
 		\end{tabular}
 
 		%------------------------------------------------
@@ -220,11 +225,11 @@
 %	 LONG LIST ENVIRONMENT
 %----------------------------------------------------------------------------------------
 
-\setlength{\tabcolsep}{0pt}
+\setlength{\tabcolsep}{1pt}
 
 % New environment for the long list
 \newenvironment{twenty}{%
-	\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll}
+	\begin{tabular*}{1.03\textwidth}{@{\extracolsep{\fill}}ll}
 }{%
 	\end{tabular*}
 }
