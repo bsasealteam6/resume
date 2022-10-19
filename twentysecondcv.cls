@@ -5,7 +5,7 @@
 %----------------------------------------------------------------------------------------
 %	 REQUIRED PACKAGES
 %----------------------------------------------------------------------------------------
-
+\RequirePackage[hidelinks]{hyperref}
 \RequirePackage[sfdefault]{ClearSans}
 \RequirePackage[T1]{fontenc}
 \RequirePackage{tikz}
