@@ -81,7 +81,7 @@
 \newcommand{\github}[1]{\renewcommand{\github}{#1}}
 
 % Command for printing the contact information icons
-\newcommand*\icon[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=1pt, fill=mainblue,mainblue,text=white] (char) {#1};}}
+\newcommand*\icon[1]{\tikz[baseline=(char.base)]{\node[shape=circle,draw,inner sep=1pt, minimum size=.7 cm, fill=mainblue,mainblue,text=white] (char) {#1};}}
 
 % Command for printing skill progress bars
 \newcommand\skills[1]{ 
@@ -144,9 +144,9 @@
 		\renewcommand{\arraystretch}{1.7}
 		\begin{tabular}{p{0.5cm} @{\hskip 0.5cm}p{5cm}}
 			\ifthenelse{\equal{\cvdate}{}}{}{\textsc{\Large\icon{\Info}} & \cvdate\\}
-			\ifthenelse{\equal{\cvaddress}{}}{}{\textsc{\Large\icon{\Letter}} & \cvaddress\\}
+			\ifthenelse{\equal{\cvaddress}{}}{}{\textsc{\Large\icon{\faHome}} & \cvaddress\\}
 			\ifthenelse{\equal{\cvnumberphone}{}}{}{\textsc{\Large\icon{\Telefon}} & \href{tel:\cvnumberphone}{\cvnumberphone}\\}
-			\ifthenelse{\equal{\cvsite}{}}{}{\textsc{\Large\icon{\Mundus}} & \href{\cvsite}{\cvsite}\\}
+			\ifthenelse{\equal{\cvsite}{}}{}{\textsc{\Large\icon{\faGlobe}} & \href{\cvsite}{\cvsite}\\}
 			\ifthenelse{\equal{\cvmail}{}}{}{\textsc{\large\icon{\faAt}} & \href{mailto:\cvmail}{\cvmail}\\}
 			\ifthenelse{\equal{\linkedin}{}}{}{\textsc{\large\icon{\faLinkedin}} & \href{https://www.linkedin.com/in/\linkedin}{\linkedin}\\}
 			\ifthenelse{\equal{\github}{}}{}{\textsc{\large\icon{\faGithub}} & \href{https://www.github.com/\github}{\github}\\}
