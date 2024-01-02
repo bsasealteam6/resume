@@ -1,237 +1,146 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Twenty Seconds Resume/CV
-% LaTeX Template
-% Version 1.1 (8/1/17)
-%
-% This template has been downloaded from:
-% http://www.LaTeXTemplates.com
-%
-% Original author:
-% Carmine Spagnuolo (cspagnuolo@unisa.it) with major modifications by 
-% Vel (vel@LaTeXTemplates.com)
-%
-% License:
-% The MIT License (see included LICENSE file)
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Project:  LaTeX Resume
+% Author:   Nate Fortner
 
-%----------------------------------------------------------------------------------------
-%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
-%----------------------------------------------------------------------------------------
+% Description: LaTeX resume template with an emphasis on relative simplicity
+% Based largely off of github.com/jakegut/resume
 
-\documentclass[letterpaper]{twentysecondcv} % letter paper for 8.5x11
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin = 0.5in]{geometry} % Margin width
+\usepackage{charter} % Global text font
+\usepackage{fontawesome} % Icons
+\usepackage[hidelinks]{hyperref} % Allows for clean hyperlink content
+\usepackage{titlesec} % Formatting for section headers
+\usepackage{eqparbox} % Helps to align the Font Awesome icons
 
-%----------------------------------------------------------------------------------------
-%	 PERSONAL INFORMATION
-%----------------------------------------------------------------------------------------
+% Section header formatting
+\titleformat{\section}{
+    \vspace{-10pt}\large\scshape % Push section header up 5pt; display with size 'large'; format it in all caps
+}{}{}{}[\titlerule\vspace{-5pt}] % Display line under section header for width of document; remove 5pt space below
 
-% If you don't need one or more of the below, just remove the content leaving the command, e.g. \cvnumberphone{}
+% Aligns the Font Awesome icons; thanks to stackoverflow.com/questions/55502809
+\newcommand{\alignicon}[2][nmbr]{\eqmakebox[#1]{\strut #2}}
 
-% \profilepic{NateFortner.jpeg} % Profile picture
-\profilepic{} % Profile picture
+% Starts top-level item formatting
+% Accepts: {Title}{Institution}{Location}{Start Date}{End Date}
+\newcommand{\topLevelItem}[4]{
+    \textbf{#1}\hfill #4\newline
+    \emph{#2\hfill #3}\newline
+    \vspace{-18pt}\begin{itemize}
+}
 
-\cvname{Nate Fortner} % Your name
-\cvjobtitle{Student/Server Admin} % Job title/career
+% Starts project-specific top-level item formatting
+% Accepts: {Title}{Institution}{Location}{Start Date}{End Date}
+\newcommand{\topLevelProjectItem}[2]{
+    \textbf{#1}\hfill \emph{#2}\newline
+    \vspace{-18pt}\begin{itemize}
+}
 
-\cvdate{} % Date of birth
-\cvaddress{Bellingham, WA} % Short address/location, use \newline if more than 1 line is required
-\cvnumberphone{251-229-2948} % Phone number
-\cvsite{https://nefortner.com} % Personal website
-\cvmail{resume@nefortner.com} % Email address
-\linkedin{nefortner} % LinkedIn URL
-\github{bsasealteam6} % GitHub URL
+% Ends top-level item formatting
+\newcommand{\topLevelItemEnd}{\end{itemize}\vspace{5pt}}
 
-%----------------------------------------------------------------------------------------
+% Low-level item formatting
+% Accepts: {Description}
+\newcommand{\lowLevelItem}[1]{
+    \item\small{#1}\vspace{-8pt}
+}
+
+% Miscellaneous formatting
+\renewcommand{\labelitemi}{$\rightarrow$} % Replaces list bullets with arrows
+
+% Suppress page numbers
+\thispagestyle{empty} 
 
 \begin{document}
-
-%----------------------------------------------------------------------------------------
-%	 ABOUT ME
-%----------------------------------------------------------------------------------------
-
-\aboutme{} % To have no About Me section, just remove all the text and leave \aboutme{}
-
-%----------------------------------------------------------------------------------------
-%	 SKILLS
-%----------------------------------------------------------------------------------------
-
-% Skill bar section, each skill must have a value between 0 an 6 (float)
-\skills{}
-
-%------------------------------------------------
-
-% Skill text section, each skill must have a value between 0 an 6
-\skillstext{}
-
-\skillsmanual{
-	\subsection{Computer Skills}
-	\begin{itemize}
-		% \item Strong skill with Microsoft Office (Word, Excel, PowerPoint, Access)
-		% \item Completed Computer Technology, Robotics, Multimedia Design, Web Design, Computer Maintenance, Cisco Networking Training, and Engineering courses
-		\item Strong skills with \LaTeX, Java, Python, C, C++, HTML, CSS, JavaScript, PHP, SQL, Ruby, and Bash
-		\item Valencia High School's CyberPatriot team member for 2 years
-		\item Coastline Community College's WRCCDC Cyber Security Team member
-		\item Western Washington University's PRCCDC Cyber Security Team member
-		\item Western Washington University's Cyber Security Club member
-		\item Western Washington University's CyberForce Team member
-	\end{itemize}
-	\subsection{Interpersonal Skills}
-	\begin{itemize}
-		\item Excellent communication skills
-		\item Skilled in keyboarding and presenting using technology
-		\item Effective at working independently
-		\item Enthusiastic and motivated worker
-		\item Mentor for First Robotics and CyberPatriots
-	\end{itemize}
-}
-%----------------------------------------------------------------------------------------
-
-\makeprofile % Print the sidebar
-
-%----------------------------------------------------------------------------------------
-%	 PURPOSE
-%----------------------------------------------------------------------------------------
-
-% \section{Purpose}
-
-% To find a summer internship for the summer of 2023 in the cybersecurity field.
-
-%----------------------------------------------------------------------------------------
-%	 EDUCATION
-%----------------------------------------------------------------------------------------
-
-\section{Education}
-
-\begin{twenty} % Environment for a list with descriptions
-	\twentyitem
-	{Since 2020}
-	{Bachelor of Science}
-	{Western Washington University}
-	{\begin{itemize}
-			\item Getting a Multidisciplinary Major with a specialization in CyberSecurity and Computer Science
-			\item Minoring in Computer Science
-			\item Member of the Cybersecurity Club
-		\end{itemize}}
-	% \twentyitem
-	% 	{2012-2017}
-	% 	{High School Diploma}
-	% 	{Valencia High School}
-	% 	{\begin{itemize}
-	% 		\item Member of the CyberPatriot template
-	% 		\item Participated in FRC robotics
-	% 	\end{itemize}}
-	%\twentyitem{<dates>}{<title>}{<location>}{<description>}
-\end{twenty}
-
-%----------------------------------------------------------------------------------------
-%	 CERTIFICATIONS
-%----------------------------------------------------------------------------------------
-
-\section{Certifications}
-
-\begin{twentyshort} % Environment for a short list with no descriptions
-	\twentyitemshort{2017-2025}{CompTIA A+}
-	\twentyitemshort{2018-2025}{CompTIA Network+}
-	\twentyitemshort{2019-2025}{CompTIA Security+}
-	%\twentyitemshort{<dates>}{<title/description>}
-\end{twentyshort}
-
-%----------------------------------------------------------------------------------------
-%	 EXPERIENCE
-%----------------------------------------------------------------------------------------
-
-\section{Experience}
-
-\begin{twenty} % Environment for a list with descriptions
-	\twentyitem
-	{Since 2021}
-	{Server Admin Student Employee}
-	{Western Washington University}
-	{\begin{itemize}
-			\item Manage and maintain WWU Housing Department Linux servers
-			\item Oversaw a major migration of the housing department's servers from vCenter to Azure in order to consolidate softwares.
-		\end{itemize}}
-	\twentyitem
-	{2019-2020}
-	{Tier 2 Help Desk Support}
-	{SeaGen}
-	{\begin{itemize}
-			\item Assisted with setting up new computers and remote troubleshooting of computers
-			\item Maintained printers, docking stations, and other office technological equipment
-		\end{itemize}}
-	\twentyitem
-	{2018-2019}
-	{Help Desk Support}
-	{Pathway Capital Management}
-	{\begin{itemize}
-			\item Provided technical support, upgrade services, and repairs for company computers, servers, and
-			      networks.
-			\item Completed a system relocation as part of a major office move.
-		\end{itemize}}
-	\twentyitem
-	{2005-2020}
-	{Boy Scout}
-	{Boy Scouts of America}
-	{\begin{itemize}
-			\item Started Scouting in first grade and earned Eagle Scout in July 2016.
-			\item Served as Troop Webmaster from 2010-2020 - created new websites for four BSA troops / crews and
-			      responsible for maintaining the new websites.
-			\item Voted into Order of the Arrow - Scouting's National Honor Society.
-		\end{itemize}}
-	\twentyitem
-	{Summer 2016}
-	{Design Interaction Intern}
-	{NASA's Jet Propulsion Laboratory}
-	{\begin{itemize}
-			\item Worked with the Deep Space Network team to modernize the satellite controls.  NASA wanted to update the control system computers to a more modern operating system and hardware.
-			\item Developed and prepared written technical reports and abstracts and prepared presentations.
-		\end{itemize}}
-	%\twentyitem{<dates>}{<title>}{<location>}{<description>}
-\end{twenty}
-
-%----------------------------------------------------------------------------------------
-%	 OTHER INFORMATION
-%----------------------------------------------------------------------------------------
-
-\section{Other information}
-
-\subsection{Home Lab}
-I have built and maintain a home lab using surplus enterprise hardware.  Through this, I have learned:
-% I have built and maintained a home lab using surplus enterprise hardware. I have everything running inside docker containers.  I use PFSense as a firewall and router, Proxmox as a hypervisor, and a variety of other services.
-
-\begin{twentyshort}
-	\twentyitemshort
-	{}
-	{\begin{itemize}
-		\item How to build and maintain a home lab
-		\item How to work with PFSense and OPNSense
-		\item How to work with Proxmox
-		\item How to use Docker containers
-		\item How to manage enterpise grade network hardware
-	\end{itemize}
-	}
-\end{twentyshort}
-
-%----------------------------------------------------------------------------------------
-%	 SECOND PAGE EXAMPLE
-%----------------------------------------------------------------------------------------
-
-%\newpage % Start a new page
-
-%\makeprofile % Print the sidebar
-
-%\section{Other information}
-
-%\subsection{Review}
-
-%Alice approaches Wonderland as an anthropologist, but maintains a strong sense of noblesse oblige that comes with her class status. She has confidence in her social position, education, and the Victorian virtue of good manners. Alice has a feeling of entitlement, particularly when comparing herself to Mabel, whom she declares has a ``poky little house," and no toys. Additionally, she flaunts her limited information base with anyone who will listen and becomes increasingly obsessed with the importance of good manners as she deals with the rude creatures of Wonderland. Alice maintains a superior attitude and behaves with solicitous indulgence toward those she believes are less privileged.
-
-%\section{Other information}
-
-%\subsection{Review}
-
-%Alice approaches Wonderland as an anthropologist, but maintains a strong sense of noblesse oblige that comes with her class status. She has confidence in her social position, education, and the Victorian virtue of good manners. Alice has a feeling of entitlement, particularly when comparing herself to Mabel, whom she declares has a ``poky little house," and no toys. Additionally, she flaunts her limited information base with anyone who will listen and becomes increasingly obsessed with the importance of good manners as she deals with the rude creatures of Wonderland. Alice maintains a superior attitude and behaves with solicitous indulgence toward those she believes are less privileged.
-
-%----------------------------------------------------------------------------------------
-
+    % Header
+    \begin{center}
+        % Info + icons beside name
+        \noindent\alignicon\faEnvelope\quad\href{mailto:resume@nefortner.com}{resume@nefortner.com}\hfill % Email
+        \href{https://linkedin.com/in/nefortner}{linkedin.com/in/nefortner}\quad\alignicon\faLinkedin\newline % LinkedIn profile
+        \alignicon\faGlobe\quad\href{https://nefortner.com}{nefortner.com}\hfill % Website
+        \href{https://github.com/bsasealteam6}{github.com/bsasealteam6}\quad\alignicon\faGithub\vspace*{-0.33in} % GitHub profile
+        
+         % Name
+        {\fontsize{28}{0}\selectfont\scshape Nate Fortner}\vspace{5pt}
+    \end{center}
+    
+    % Section 1: Experience
+    \section*{Experience}
+        % Element
+        \topLevelItem{Sever Admin Student Employee}{Western Washington University}{Bellingham, WA}{2021 - Present}
+            \lowLevelItem{Manage and maintain WWU Housing Department Linux servers}
+            \lowLevelItem{Oversaw a major migration of the housing department’s servers from vCenter to Azure in order to consolidate softwares}
+        \topLevelItemEnd
+        % Element
+        \topLevelItem{Tier 2 Help Desk Support}{SeaGen}{Bellingham, WA}{2019-2020}
+            \lowLevelItem{Assisted with setting up new computers and remote troubleshooting of computers}
+            \lowLevelItem{Maintained printers, docking stations, and other office technological equipment}
+        \topLevelItemEnd
+        % Element
+        \topLevelItem{Help Desk Support}{Pathway Capital Management}{Irvine, CA}{2018-2019}
+            \lowLevelItem{Provided technical support, upgrade services, and repairs for company computers, servers, and networks}
+            \lowLevelItem{Completed a system relocation as part of a major office move}
+        \topLevelItemEnd
+        %Element
+        \topLevelItem{Design Interaction Intern}{NASA's Jet Propulsion Laboratory}{La Canada Flintridge, CA}{Summer 2016}
+            \lowLevelItem{Worked with the Deep Space Network team to modernize the satellite controls. NASA wanted to update the control system computers to a more modern operating system and hardware.}
+            \lowLevelItem{Developed and prepared written technical reports and abstracts and prepared presentations}
+        \topLevelItemEnd
+    % Section 2: Education
+    \section*{Education}
+        % Element
+        \topLevelItem{Multi-Disciplinary Studies, BA}{Western Washington University}{Bellingham, WA}{Sep. 2020 — June 2024 (Expected)}
+            \lowLevelItem{Multi-Disciplinary Studies Major with specialization in Computer Science and Cybersecurity}
+            \lowLevelItem{Relevant coursework: Cyber Warfare}
+            \lowLevelItem{Academic experience with Java, C, Python, MySQL, Bash, PowerShell, NodeJS}
+        \topLevelItemEnd
+        % Element
+        \topLevelItem{Computer Science, Minior}{Western Washington University }{Bellingham, WA}{Sep. 2020 — June 2024 (Expected)}
+            \lowLevelItem{Relevant coursework: Database Systems, Web Scripting}
+        \topLevelItemEnd
+        % Element
+        \topLevelItem{Mechatronics, High School Diploma}{Valencia High School}{Placentia, CA}{Sept 2014-June 2017}
+            \lowLevelItem{Relevant coursework: Cisco CCNA Routing and Switching, A+ Certification, Computer Maintence, Computer Science}
+        \topLevelItemEnd
+        \topLevelItem{Misc. Courses}{Coastline Community College}{Costa Mesa, CA}{Sept 2017-June 2019}
+            \lowLevelItem{Relevant coursework: Cisco CCNA Routing and Switching, Security+ Certification, Network+ Certification, Cyber Forensics}
+        \topLevelItemEnd
+        
+    % Section 3: Activities
+    \section*{Activities}
+        % Element
+        \topLevelItem{WWU Cybersecurity Club}{Western Washington University}{Bellingham, WA}{Sept. 2020 — Present}
+            \lowLevelItem{Heavily involved in WWU Cybersecurity club}
+            \lowLevelItem{Arranged multiple competitions and conferences for the club to go to}
+        \topLevelItemEnd
+        % Element
+        \topLevelItem{Collegiate Cyber Defense Competition (Team Co-Captain)}{Western Washington University}{Bellingham, WA}{Dec 2023-June 2024 (Expected)}
+            \lowLevelItem{2023 Co-Captain}
+            \lowLevelItem{Managed the deployment and maintenance of Palo Alto Firewall + IPS to protect the network from external threats}
+            \lowLevelItem{Hardened Windows and *nix systems and services, filed incident reports, prepared technical security documentation}
+            \lowLevelItem{Provided organized and effective client support while under relentless attack by skilled industry professionals}
+        \topLevelItemEnd
+        % Element
+        \topLevelItem{Department of Energy CyberForce Competition (Team Captain)}{Western Washington University}{Bellingham, WA}{Oct 2023- Nov 2023}
+            \lowLevelItem{Maintained professional client relations in a security management role against an assumed, actively exploited breach}
+            \lowLevelItem{Prepared technical documentation, drafted reports to facilitate event organization}
+        \topLevelItemEnd
+        
+    % Section 4: Projects
+    \section*{Projects}
+        % Element
+        \topLevelProjectItem{Personal Website and Tech Blog}{\href{https://nefortner.com}{nefortner.com}}
+            \lowLevelItem{Dedicated to educational technical articles related to competition/CTF reports, malware analysis, and security research}
+            \lowLevelItem{Intermediate web development skills with HTML, JavaScript, CSS; Frameworks: React, Hugo}
+        \topLevelItemEnd
+        % Element
+        \topLevelProjectItem{VirusTotal Discord Bot}{\href{https://github.com/bsasealteam6/VirusTotalBot-1}{https://github.com/bsasealteam6/VirusTotalBot-1}}
+            \lowLevelItem{Discord server bot that can easily reference links against VirusTotal for quick scanning}
+            \lowLevelItem{Built with Java; constructed for club Discord ser}ver
+        \topLevelItemEnd
+        % Element
+        \topLevelProjectItem{Home Lab}{{\href{https://nefortner.com/homelab}{nefortner.com/homelab}}}
+            \lowLevelItem{Proxmox VM cluster: self-hosted DNS with domain-filtering, isolated malware analysis lab, remote development environment, file storage system, media server appliances, CTF images, various game servers; external access via TailScale}
+            \lowLevelItem{Widely agreed to be the most comprehensive homelab in the club by far}
+        \topLevelItemEnd
 \end{document}
