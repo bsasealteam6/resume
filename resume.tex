@@ -12,6 +12,7 @@
 \usepackage[hidelinks]{hyperref} % Allows for clean hyperlink content
 \usepackage{titlesec} % Formatting for section headers
 \usepackage{eqparbox} % Helps to align the Font Awesome icons
+\usepackage{xcolor} % Allows for graying out the verification codes
 
 % Section header formatting
 \titleformat{\section}{
@@ -28,6 +29,11 @@
     \emph{#2\hfill #3}\newline
     \vspace{-18pt}\begin{itemize}
 }
+\newcommand{\certificationType}[2]{
+    \textbf{#1}\hfill #2\newline
+    \vspace{-18pt}\begin{itemize}
+}
+
 
 % Starts project-specific top-level item formatting
 % Accepts: {Title}{Institution}{Location}{Start Date}{End Date}
@@ -38,13 +44,16 @@
 
 % Ends top-level item formatting
 \newcommand{\topLevelItemEnd}{\end{itemize}\vspace{5pt}}
+\newcommand{\certificationTypeEnd}{\end{itemize}\vspace{5pt}}
 
 % Low-level item formatting
 % Accepts: {Description}
 \newcommand{\lowLevelItem}[1]{
     \item\small{#1}\vspace{-8pt}
 }
-
+\newcommand{\certification}[2]{
+    \lowLevelItem{#1 \hfill \textcolor{gray}{#2}}
+}
 % Miscellaneous formatting
 \renewcommand{\labelitemi}{$\rightarrow$} % Replaces list bullets with arrows
 
@@ -63,8 +72,15 @@
          % Name
         {\fontsize{28}{0}\selectfont\scshape Nate Fortner}\vspace{5pt}
     \end{center}
-    
-    % Section 1: Experience
+    Section 1: Certificationscertificatoin
+    \section*{Certifications}
+        % Element
+        \certificationType{CompTIA}{\href{https://verify.comptia.org}{verify.comptia.org}}
+            \certification{A+}{6XJQL5KH1K1Q10WE}
+            \certification{Network+}{V651132ERCQ11MWY}
+            \certification{Security+}{HTS1EL3MTHRE11GM}
+        \certificationTypeEnd
+    % % Section 2: Experience
     \section*{Experience}
         % Element
         \topLevelItem{Server Admin Student Employee}{Western Washington University}{Bellingham, WA}{2021 - Present}
