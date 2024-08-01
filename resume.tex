@@ -9,10 +9,18 @@
 \usepackage[margin = 0.5in]{geometry} % Margin width
 \usepackage{charter} % Global text font
 \usepackage{fontawesome} % Icons
-\usepackage[hidelinks]{hyperref} % Allows for clean hyperlink content
+\usepackage[hidelinks,pdftex]{hyperref} % Allows for clean hyperlink content
 \usepackage{titlesec} % Formatting for section headers
 \usepackage{eqparbox} % Helps to align the Font Awesome icons
 \usepackage{xcolor} % Allows for graying out the verification codes
+% \usepackage[pdftex,
+%             pdfauthor={Nate Fortner},
+%             pdftitle={Nate Fortner's Resume},
+%             pdfsubject={Resume},
+%             pdfkeywords={Resume, Linux, Systems Administration}]{hyperref}
+\hypersetup{
+    pdftitle={Nate Fortner's Resume}
+}
 
 % Section header formatting
 \titleformat{\section}{
