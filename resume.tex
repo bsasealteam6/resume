@@ -13,6 +13,9 @@
 \usepackage{titlesec} % Formatting for section headers
 \usepackage{eqparbox} % Helps to align the Font Awesome icons
 \usepackage{xcolor} % Allows for graying out the verification codes
+\usepackage{enumitem} % Allows for custom list formatting
+\setlist[itemize]{leftmargin=*} % Removes left margin for itemize lists
+
 % \usepackage[pdftex,
 %             pdfauthor={Nate Fortner},
 %             pdftitle={Nate Fortner's Resume},
@@ -28,17 +31,17 @@
 }{}{}{}[\titlerule\vspace{-5pt}] % Display line under section header for width of document; remove 5pt space below
 
 % Aligns the Font Awesome icons; thanks to stackoverflow.com/questions/55502809
-\newcommand{\alignicon}[2][nmbr]{\eqmakebox[#1]{\strut #2}}
+\newcommand{\alignicon}[2][nmbr]{\eqmakebox[#1]{\strut#2}}
 
 % Starts top-level item formatting
 % Accepts: {Title}{Institution}{Location}{Start Date}{End Date}
 \newcommand{\topLevelItem}[4]{
-    \textbf{#1}\hfill #4\newline
-    \emph{#2\hfill #3}\newline
+    \textbf{#1} at \emph{#2}\hfill #4\newline
+    % \emph{#2\hfill #3}\newline
     \vspace{-18pt}\begin{itemize}
 }
 \newcommand{\certificationType}[2]{
-    \textbf{#1} - #2
+    \textbf{#1 Certifications}: #2\vspace{2pt} \newline
 }
 
 
@@ -62,55 +65,55 @@
     \lowLevelItem{#1 \hfill \textcolor{gray}{#2}}
 }
 % Miscellaneous formatting
-\renewcommand{\labelitemi}{$\rightarrow$} % Replaces list bullets with arrows
+\renewcommand{\labelitemi}{} % Replaces list bullets with arrows
 
 % Suppress page numbers
 \thispagestyle{empty} 
 
 \begin{document}
 % Header
+
 \begin{center}
-	% Info + icons beside nameCould not find definition for \lowLe
-	\noindent\alignicon\faEnvelope\quad\href{mailto:resume@nefortner.com}{resume@nefortner.com}\hfill % Email
+	% Info + icons beside name
+	\noindent\alignicon\faEnvelope\quad\href{mailto:nefortner@gmail.com}{nefortner@gmail.com}\hfill % Email
 	\href{https://linkedin.com/in/nefortner}{linkedin.com/in/nefortner}\quad\alignicon\faLinkedin\newline % LinkedIn profile
-	\alignicon\quad\href{https://nefortner.com}{ }
+	\alignicon\faPhone\quad\href{tel:2512292948}{(251) 229-2948}
     \hfill % Website
 	\href{https://github.com/bsasealteam6}{github.com/bsasealteam6}\quad\alignicon\faGithub\vspace*{-0.33in} % GitHub profile
 
 	% Name
 	{\fontsize{28}{0}\selectfont\scshape Nate Fortner}
 \end{center}
-\begin{center}
-	(251) 229-2948\vspace{5pt}
-\end{center}
+% \begin{center}
+% 	(251) 229-2948\vspace{5pt}
+% \end{center}
 % \section*{Purpose}
-IT Professional with a strong background in computer hardware, operating system, and network administration. Looking for full-time employment in cybersecurity. $\mid$ CompTIA Certifications: A+, Network+, Security+
+\fbox{
+    \parbox{\textwidth}{
+        IT Professional with several years of experience maintaining computer hardware, operating systems, and networks looking to full-time employment in the central Florida area in IT. $|$ CompTIA Certifications: A+, Network+, Security+
+    }
+}
 % % Section 2: Experience
 \section*{Experience}
 % Element
 \topLevelItem{Systems Administrator}{South Carolina Department of Mental Health (SCDMH)}{Aiken, SC}{2024 — Present}
-\lowLevelItem{Manage and maintain all systems for the Aiken Barnwell Mental Health Center for SCDMH}
-\lowLevelItem{Imaging machines, installing software, and managing active directory}
-\lowLevelItem{Prepare disaster plans for the center}
+\lowLevelItem{Manage and maintain all systems for the Aiken Barnwell Mental Health Center and two satellite offices for SCDMH.  Image machines, install software, manage active directory, provide client support for software, network, and hardware issues, and prepare disaster plans for the center.}
+
 \topLevelItemEnd
 \topLevelItem{Linux Systems Engineer (Student Employee)}{Western Washington University}{Bellingham, WA}{2021 — 2024}
-\lowLevelItem{Managed and maintained WWU Housing Department Linux servers}
-\lowLevelItem{Led a major migration of the housing department’s servers from vCenter to Azure to consolidate softwares}
+\lowLevelItem{Managed and maintained WWU Housing Department Linux servers.  Led a major migration of the housing department’s servers from vCenter to Azure to consolidate software programs and reduce costs.  Developed and maintained scripts to automate server management tasks.  Provided client support for software, network, and hardware issues.}
 \topLevelItemEnd
 % Element
 \topLevelItem{Tier 2 Help Desk Support}{SeaGen}{Bothell, WA}{2019 — 2020}
-\lowLevelItem{Assisted with setting up new computers and remote troubleshooting of computers}
-\lowLevelItem{Maintained printers, docking stations, and other office technological equipment}
+\lowLevelItem{Assisted with setting up new computers and remote troubleshooting of computers.  Maintained printers, docking stations, and other office technological equipment.}
 \topLevelItemEnd
 % Element
 \topLevelItem{Help Desk Support}{Pathway Capital Management}{Irvine, CA}{2018 — 2019}
-\lowLevelItem{Provided technical support, upgrade services, and repairs for company computers, servers, and networks}
-\lowLevelItem{Completed a system relocation as part of a major office move}
+\lowLevelItem{Provided technical support, upgrade services, and repairs for company computers, servers, and networks.  Completed a system relocation as part of a major office move.  Assisted with the setup of new computers and remote troubleshooting of computers.}
 \topLevelItemEnd
 %Element
 \topLevelItem{Design Interaction Intern}{NASA's Jet Propulsion Laboratory}{La Ca\~{n}ada Flintridge, CA}{Summer 2016}
-\lowLevelItem{Worked with the Deep Space Network team to modernize the satellite controls. NASA wanted to update the control system computers to a more modern operating system and hardware.}
-\lowLevelItem{Developed and prepared written technical reports and abstracts and prepared presentations}
+\lowLevelItem{Worked with the Deep Space Network team to modernize the satellite controls by designing and programming new controls using JAVA FX, HTML5, PHP, and PolymerJS. Developed and prepared written technical reports and abstracts, and prepared and presented findings.}
 \topLevelItemEnd
 % Section 2: Education
 \section*{Projects}
@@ -126,38 +129,35 @@ IT Professional with a strong background in computer hardware, operating system,
 % \topLevelItemEnd
 % Element
 \topLevelProjectItem{Home Lab}{{}} %\href{https://nefortner.com/homelab}{nefortner.com/homelab}
-\lowLevelItem{Proxmox VMs, Docker containers for software control, Isolated malware testing lab, OPNSense firewall, File hosting/Media server, External access enabled, Remote development environment, Game servers}
+\lowLevelItem{I created and currently maintain a personal home lab consisting of a Proxmox hypervisor running different Linux servers in VMs, Docker containers to separate and isolate software, an isolated malware testing lab, an OPNSense firewall, Nextcloud for file management, Plex for media sharing, a remote development environment, and Pterodactyl to manage game servers in Docker containers.}
 % \lowLevelItem{Widely agreed to be the most comprehensive homelab in the club by far}
 \topLevelItemEnd
 % Section 3: Activities
 \section*{Activities}
 % Element
 \topLevelItem{WWU Cybersecurity Club}{Western Washington University}{Bellingham, WA}{Sept. 2020 — June 2024}
-\lowLevelItem{Heavily involved in WWU Cybersecurity club}
-\lowLevelItem{Arranged multiple competitions and conferences for the club to go to}
+\lowLevelItem{Helped lead the WWU Cybersecurity club and coordinated the club’s participation in multiple cybersecurity competitions and conferences.}
 \topLevelItemEnd
 % Element
 \topLevelItem{Collegiate Cyber Defense Competition (Team Co-Captain)}{Western Washington University}{Bellingham, WA}{Dec 2023 — June 2024}
-\lowLevelItem{Hardened Windows and *nix systems and services, filed incident reports, prepared technical security documentation}
-\lowLevelItem{Provided organized and effective client support while under relentless attack by skilled industry professionals}
+\lowLevelItem{Hardened Windows and *nix systems and services, filed incident reports, prepared technical security documentation.  Provided organized and effective client support while under relentless attack by skilled industry professionals.}
 \topLevelItemEnd
 % Element
 \topLevelItem{Department of Energy CyberForce Competition (Team Captain)}{Western Washington University}{Bellingham, WA}{Oct 2023 — Nov 2023}
-\lowLevelItem{Maintained professional client relations in a security management role against an assumed, actively exploited breach}
-\lowLevelItem{Prepared technical documentation and drafted reports to facilitate event organization}
+\lowLevelItem{Worked in a security management role to help clients defend themselves from an assumed, actively exploited breach.  Prepared technical documentation and drafted reports to facilitate event organization.}
 \topLevelItemEnd
 
-\section*{Certifications}
+% \section*{Certifications}
+% % Element
+% \certificationType{CompTIA}{A+, Network+, Security+}
+
+
+\section*{Education and Certifications}
 % Element
 \certificationType{CompTIA}{A+, Network+, Security+}
-
-
-\section*{Education}
-% Element
-\topLevelItem{Computer Science and Society, BA and Minor in Computer Science}{Western Washington University}{Bellingham, WA}{Sept 2020 — June 2024}
+\topLevelItem{Bachelors in Computer Science and Society}{Western Washington University}{Bellingham, WA}{Sept 2020 — June 2024}
 % \lowLevelItem{Multi-Disciplinary Studies Major with specialization in Computer Science and Cybersecurity}
-\lowLevelItem{Relevant coursework: Cyber Warfare, Database Systems, Web Scripting, Object-Oriented Design}
-\lowLevelItem{Academic experience with Java, C, Python, MySQL, Bash, PowerShell, NodeJS}
+\lowLevelItem{Relevant coursework: Cyber Warfare, Database Systems, Web Scripting, Object-Oriented Design.  Academic experience with Java, C, Python, MySQL, Bash, PowerShell, NodeJS}
 \topLevelItemEnd
 % Element
 % \topLevelItem{}{Western Washington University }{Bellingham, WA}{Sep. 2020 — June 2024 (Expected)}
